@@ -129,9 +129,13 @@ function comprobarCasilla(c){
             
         }else{
             if(final==false){
-                console.log("Te has llevado las fichas de la casilla " + c);
+                if(arraycasi[c-2].numFichas!=0){
+                console.log("Te has llevado las " + arraycasi[c-2].numFichas + " fichas de la casilla " + c);
                 arrayjug[turno].fichasganadas+=arraycasi[c-2].numFichas;
                 arraycasi[c-2].numFichas=0;
+                }else{
+                    console.log("Ya no hay fichas en la casilla " + c);
+                }
                 jugar();
             }
         }
